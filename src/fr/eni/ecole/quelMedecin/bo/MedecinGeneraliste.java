@@ -12,6 +12,14 @@ public class MedecinGeneraliste {
    private String numeroDeTelephone;
    private static int tarif = 25;
 
+////////////Constructeur//////////////
+    /**
+     * constructeur pour initialiser une instance
+     * MedecinGeneraliste
+     * @param nom
+     * @param prenom
+     * @param numeroDeTelephone
+     */
     public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone) {
         this.nom = nom.toUpperCase();
         this.prenom = prenom;
