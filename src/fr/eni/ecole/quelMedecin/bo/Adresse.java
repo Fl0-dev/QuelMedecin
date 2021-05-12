@@ -1,7 +1,7 @@
 package fr.eni.ecole.quelMedecin.bo;
 
 /**
- * Classe représentant les adresses des patients
+ * Classe représentant les adresses des médecins
  * @date 11 mai 2021
  * @version v1.0
  * @author Florian Girard
