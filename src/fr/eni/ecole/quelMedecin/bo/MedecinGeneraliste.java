@@ -3,7 +3,7 @@ package fr.eni.ecole.quelMedecin.bo;
 /**
  * Classe qui représente un médecin
  * @date 11 mai 2021
- * @version v1.0
+ * @version v2.0
  * @author Florian Girard
  */
 public class MedecinGeneraliste {
@@ -11,21 +11,24 @@ public class MedecinGeneraliste {
    private String prenom;
    private String numeroDeTelephone;
    private static int tarif = 25;
+   private Adresse adresseDoc;
 
 ////////////Constructeur//////////////
     /**
-     * constructeur pour initialiser une instance
-     * MedecinGeneraliste
+     * constructeur de medecin généraliste
      * @param nom
      * @param prenom
      * @param numeroDeTelephone
+     * @param adresseDoc
      */
-    public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone) {
-        this.nom = nom.toUpperCase();
+    public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresseDoc) {
+        this.nom = nom;
         this.prenom = prenom;
         this.numeroDeTelephone = numeroDeTelephone;
+        this.adresseDoc = adresseDoc;
     }
-////////////GET/////////////
+
+    ////////////GET/////////////
     public String getNumeroDeTelephone() {
         return numeroDeTelephone;
     }
@@ -53,11 +56,15 @@ public class MedecinGeneraliste {
      * NOM Prénom
      * Téléphone : XXXXXXXXXX
      * Tarif : XX€
+     * Adresse :
+     * XXXXXXXXXXXXXXX
      */
     public void afficher() {
-        System.out.printf("%s %s%n", this.nom, this.prenom);
-        System.out.printf("Téléphone : %s%n",this.numeroDeTelephone);
-        System.out.printf("Tarif : %s €%n",MedecinGeneraliste.tarif);
-        //ou System.out.printf("%s %s%n"Téléphone : %s%nTarif : %s €%n",this.nom,this.prenom,this.numeroDeTelephone,MedecinGeneraliste.tarif));
+        System.out.printf("%s %s%n" +
+                "Téléphone : %s%n" +
+                "Tarif : %s €%n"
+                ,this.nom,this.prenom,this.numeroDeTelephone,MedecinGeneraliste.tarif);
+        System.out.println("Adresse : ");
+        adresseDoc.afficher();
     }
 }

@@ -7,7 +7,7 @@ import java.time.format.FormatStyle;
 /**
  * Classe représentant les patients
  * @date 11 mai 2021
- * @version v1.0
+ * @version v2.0
  * @author Florian Girard
  */
 public class Patient {
@@ -18,9 +18,12 @@ public class Patient {
     private long nubSecu;
     private LocalDate dateNaissance;
     private String comment;
+    private Adresse adressePatient;
 
     ////////////Constructeur///////////////////////
-    public Patient(String nom, String prenom, String telephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment) {
+
+
+    public Patient(String nom, String prenom, String telephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment, Adresse adressePatient) {
         this.nom = nom.toUpperCase();
         this.prenom = prenom;
         this.telephone = telephone;
@@ -28,6 +31,7 @@ public class Patient {
         this.nubSecu = nubSecu;
         this.dateNaissance = dateNaissance;
         this.comment = comment;
+        this.adressePatient = adressePatient;
     }
 
     /**
@@ -38,6 +42,8 @@ public class Patient {
      * Numéro de Sécurité sociale : XXXXXXXXXXXXXXX
      * Date de naissance : dd mm yyyy
      * Commentaires : XXXXXXXXXXXXXXX
+     * Adresse :
+     * XXXXXXXX
      */
     ///////METHODE////////////
     public void afficher(){
@@ -47,20 +53,12 @@ public class Patient {
                 "Sexe : %s%n" +
                 "Numéro de Sécurité sociale : %d%n" +
                 "Date de naissance : %s%n" +
-                "Commentaires : %s%n",
+                "Commentaires : %s%n" ,
                 this.nom, this.prenom,this.telephone
                 ,this.sexe =='F'?"Féminin":"Masculin",this.nubSecu,this.dateNaissance.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)),
                 this.comment == null?"[aucun commentaire]":this.comment);
-
-        /*ou
-        System.out.printf("%s %s%n", this.nom, this.prenom);
-        System.out.printf("Téléphone : %s%n",this.telephone);
-        System.out.printf(this.sexe =='F'?"Féminin":"Masculin");
-        System.out.printf("Numéro de Sécurité sociale : %d%n",this.nubSecu);
-        System.out.printf("Date de naissance : %s%n",this.dateNaissance.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
-        System.out.printf(this.comment == null?"[aucun commentaire]":this.comment);
-        */
-
+        System.out.println("Adresse : ");
+        adressePatient.afficher();
     }
 
 
