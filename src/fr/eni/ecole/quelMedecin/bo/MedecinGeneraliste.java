@@ -11,8 +11,8 @@ import java.time.LocalTime;
  */
 public class MedecinGeneraliste extends Personne{
     protected static int tarif = 25;
-    private Adresse adresseDoc;
-    private Creneau[] creneaux = new Creneau[15];
+    protected Adresse adresseDoc;
+    protected Creneau[] creneaux = new Creneau[15];
 
 ////////////Constructeur//////////////
 
