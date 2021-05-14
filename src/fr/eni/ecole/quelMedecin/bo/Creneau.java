@@ -13,8 +13,24 @@ public class Creneau {
     private LocalTime heureDebut;
     private int duree;
     private MedecinGeneraliste medecin;
+    private RendezVous[] creneauRDV;
 
 /////Constructeur///////////////////
+
+
+    /**
+     * @param heureDebut
+     * @param duree
+     * @param medecin
+     * @param creneauRDV
+     */
+    public Creneau(LocalTime heureDebut, int duree, MedecinGeneraliste medecin, RendezVous[] creneauRDV) {
+        this.heureDebut = heureDebut;
+        this.duree = duree;
+        this.medecin = medecin;
+        this.medecin.ajouterCreneau(this);
+        this.creneauRDV = creneauRDV;
+    }
 
     /**
      * constructeur de Creneau
@@ -44,10 +60,11 @@ public class Creneau {
      * affichage du créneau
      */
     public void afficher() {
-        System.out.printf("%s - %s (%d minutes)%n",
+        System.out.printf("%s - %s (%d minutes)%navec le Dr %s%n",
                 this.heureDebut.toString(),
                 this.heureDebut.plusMinutes(this.duree),
-                this.duree
+                this.duree,
+                this.medecin.getNom()
         );
     }
 }

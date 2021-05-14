@@ -19,10 +19,46 @@ public class Patient {
     private LocalDate dateNaissance;
     private String comment;
     private Adresse adressePatient;
+    private RendezVous[] rendezVousPatient;
 
     ////////////Constructeur///////////////////////
 
 
+    /**
+     * constructeur
+     * @param nom
+     * @param prenom
+     * @param telephone
+     * @param sexe
+     * @param nubSecu
+     * @param dateNaissance
+     * @param comment
+     * @param adressePatient
+     * @param rendezVousPatient
+     */
+    public Patient(String nom, String prenom, String telephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment, Adresse adressePatient, RendezVous[] rendezVousPatient) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
+        this.sexe = sexe;
+        this.nubSecu = nubSecu;
+        this.dateNaissance = dateNaissance;
+        this.comment = comment;
+        this.adressePatient = adressePatient;
+        this.rendezVousPatient = rendezVousPatient;
+    }
+
+    /**
+     * Constructeur
+     * @param nom
+     * @param prenom
+     * @param telephone
+     * @param sexe
+     * @param nubSecu
+     * @param dateNaissance
+     * @param comment
+     * @param adressePatient
+     */
     public Patient(String nom, String prenom, String telephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment, Adresse adressePatient) {
         this.nom = nom.toUpperCase();
         this.prenom = prenom;
