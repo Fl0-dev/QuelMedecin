@@ -60,8 +60,8 @@ public class Patient extends Personne{
                 "Numéro de Sécurité sociale : %d%n" +
                 "Date de naissance : %s%n" +
                 "Commentaires : %s%n" ,
-                this.nom, this.prenom,this.numeroDeTelephone
-                ,this.sexe =='F'?"Féminin":"Masculin",this.nubSecu,this.dateNaissance.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)),
+                this.nom, this.prenom,this.numeroDeTelephone,
+                this.sexe =='F'?"Féminin":"Masculin",this.nubSecu,this.dateNaissance.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)),
                 this.comment == null?"[aucun commentaire]":this.comment);
         System.out.println("Adresse : ");
         adressePatient.afficher();
