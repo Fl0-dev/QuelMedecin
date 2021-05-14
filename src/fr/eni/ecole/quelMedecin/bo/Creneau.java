@@ -60,11 +60,11 @@ public class Creneau {
      * affichage du créneau
      */
     public void afficher() {
-        System.out.printf("%s - %s (%d minutes)%navec le Dr %s%n",
+        System.out.printf("%s - %s (%d minutes)%n",
                 this.heureDebut.toString(),
                 this.heureDebut.plusMinutes(this.duree),
-                this.duree,
-                this.medecin.getNom()
+                this.duree
+
         );
     }
 }

@@ -34,6 +34,7 @@ public class RendezVous {
     public void afficher(){
         System.out.printf("Rendez-vous du %s ",this.dateRDV.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
         creneauRDV.afficher();
+        System.out.println("Avec le Dr"+this.creneauRDV.getMedecin().getNom());
         System.out.print("pour ");
         patientRDV.afficher();
     }

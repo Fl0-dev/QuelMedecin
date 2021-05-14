@@ -9,32 +9,23 @@ import java.time.LocalTime;
  * @version v2.0
  * @date 11 mai 2021
  */
-public class MedecinGeneraliste {
-    private String nom;
-    private String prenom;
-    private String numeroDeTelephone;
-    private static int tarif = 25;
+public class MedecinGeneraliste extends Personne{
+    protected static int tarif = 25;
     private Adresse adresseDoc;
     private Creneau[] creneaux = new Creneau[15];
 
 ////////////Constructeur//////////////
 
 
-    /**
-     * Constructeur de la class MedecinGenaraliste
-     *
-     * @param nom
-     * @param prenom
-     * @param numeroDeTelephone
-     * @param adresseDoc
-     * @param creneaux
-     */
     public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresseDoc, Creneau[] creneaux) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numeroDeTelephone = numeroDeTelephone;
+        super(nom, prenom, numeroDeTelephone);
         this.adresseDoc = adresseDoc;
         this.creneaux = creneaux;
+    }
+
+    public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresseDoc) {
+        super(nom, prenom, numeroDeTelephone);
+        this.adresseDoc = adresseDoc;
     }
 
     ////////////GET/////////////
@@ -48,20 +39,6 @@ public class MedecinGeneraliste {
 
     public String getNom() {
         return nom;
-    }
-
-    /**
-     * Constructeur avec 4 paramètres
-     * @param nom
-     * @param prenom
-     * @param numeroDeTelephone
-     * @param adresseDoc
-     */
-    public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresseDoc) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numeroDeTelephone = numeroDeTelephone;
-        this.adresseDoc = adresseDoc;
     }
 
     ///////////////SET///////////////

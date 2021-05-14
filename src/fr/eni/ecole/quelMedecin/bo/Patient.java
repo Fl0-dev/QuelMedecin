@@ -10,10 +10,7 @@ import java.time.format.FormatStyle;
  * @version v2.0
  * @author Florian Girard
  */
-public class Patient {
-    private String nom;
-    private String prenom;
-    private String telephone;
+public class Patient extends Personne{
     private char sexe;
     private long nubSecu;
     private LocalDate dateNaissance;
@@ -24,22 +21,8 @@ public class Patient {
     ////////////Constructeur///////////////////////
 
 
-    /**
-     * constructeur
-     * @param nom
-     * @param prenom
-     * @param telephone
-     * @param sexe
-     * @param nubSecu
-     * @param dateNaissance
-     * @param comment
-     * @param adressePatient
-     * @param rendezVousPatient
-     */
-    public Patient(String nom, String prenom, String telephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment, Adresse adressePatient, RendezVous[] rendezVousPatient) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.telephone = telephone;
+    public Patient(String nom, String prenom, String numeroDeTelephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment, Adresse adressePatient, RendezVous[] rendezVousPatient) {
+        super(nom, prenom, numeroDeTelephone);
         this.sexe = sexe;
         this.nubSecu = nubSecu;
         this.dateNaissance = dateNaissance;
@@ -48,21 +31,8 @@ public class Patient {
         this.rendezVousPatient = rendezVousPatient;
     }
 
-    /**
-     * Constructeur
-     * @param nom
-     * @param prenom
-     * @param telephone
-     * @param sexe
-     * @param nubSecu
-     * @param dateNaissance
-     * @param comment
-     * @param adressePatient
-     */
-    public Patient(String nom, String prenom, String telephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment, Adresse adressePatient) {
-        this.nom = nom.toUpperCase();
-        this.prenom = prenom;
-        this.telephone = telephone;
+    public Patient(String nom, String prenom, String numeroDeTelephone, char sexe, long nubSecu, LocalDate dateNaissance, String comment, Adresse adressePatient) {
+        super(nom, prenom, numeroDeTelephone);
         this.sexe = sexe;
         this.nubSecu = nubSecu;
         this.dateNaissance = dateNaissance;
@@ -90,7 +60,7 @@ public class Patient {
                 "Numéro de Sécurité sociale : %d%n" +
                 "Date de naissance : %s%n" +
                 "Commentaires : %s%n" ,
-                this.nom, this.prenom,this.telephone
+                this.nom, this.prenom,this.numeroDeTelephone
                 ,this.sexe =='F'?"Féminin":"Masculin",this.nubSecu,this.dateNaissance.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)),
                 this.comment == null?"[aucun commentaire]":this.comment);
         System.out.println("Adresse : ");
